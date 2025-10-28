@@ -1,6 +1,7 @@
 "use client"
 
 import { Dithering } from "@paper-design/shaders-react"
+
 import { useState, useEffect } from "react"
 import { RotatingLogo } from "@/components/rotating-logo"
 import Link from "next/link"
@@ -22,53 +23,39 @@ export default function ResumePage() {
   }
 
   return (
-    <div className="relative min-h-screen overflow-hidden flex flex-col md:flex-row">
+    <div className="min-h-screen flex flex-col md:flex-row">
       <div
-        className={`w-full md:w-1/2 p-4 md:p-8 font-mono relative z-10 ${isDarkMode ? "bg-black text-white" : "bg-gray-100 text-black"}`}
+        className={`w-full md:w-1/2 p-4 md:p-8 font-mono ${isDarkMode ? "bg-black text-white" : "bg-gray-100 text-black"}`}
       >
-        {/* Theme toggle button in top right of left panel */}
-        <button
-          onClick={toggleTheme}
-          className={`absolute top-4 right-4 md:top-8 md:right-8 p-2 rounded-full transition-colors z-20 ${
-            isDarkMode ? "hover:bg-white/10" : "hover:bg-black/10"
-          }`}
-          aria-label="Toggle theme"
-        >
-          {isDarkMode ? (
-            // Sun icon for light mode
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <circle cx="12" cy="12" r="5" />
-              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-            </svg>
-          ) : (
-            // Moon icon for dark mode
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-            </svg>
-          )}
-        </button>
-
         {/* Header with particle background */}
         <div className="mb-8 md:mb-12 relative">
-          <div className="absolute inset-0 -mx-4 md:-mx-8 overflow-hidden md:hidden">
-            <Dithering
-              style={{ height: "100%", width: "100%" }}
-              colorBack={isDarkMode ? "hsl(0, 0%, 0%)" : "hsl(0, 0%, 95%)"}
-              colorFront={isDarkMode ? "hsl(320, 100%, 70%)" : "hsl(220, 100%, 70%)"}
-              shape="ripple"
-              type="8x8"
-              pxSize={2}
-              offsetX={0}
-              offsetY={0}
-              scale={0.6}
-              rotation={0}
-              speed={0.05}
-            />
-          </div>
-
+          
           {/* Header content on top of particles */}
           <div className="relative z-10">
-            <h1 className="text-base md:text-lg font-normal mb-4 md:mb-8">flvckz.xyz</h1>
+            <div className="flex justify-between items-start mb-4 md:mb-8">
+              <h1 className="text-base md:text-lg font-normal">flvckz.xyz</h1>
+              {/* Theme toggle button */}
+              <button
+                onClick={toggleTheme}
+                className={`p-2 rounded-full transition-colors ${
+                  isDarkMode ? "hover:bg-white/10" : "hover:bg-black/10"
+                }`}
+                aria-label="Toggle theme"
+              >
+                {isDarkMode ? (
+                  // Sun icon for light mode
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="5" />
+                    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                  </svg>
+                ) : (
+                  // Moon icon for dark mode
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                  </svg>
+                )}
+              </button>
+            </div>
             <div className="mb-4 md:mb-8">
               <h2 className="text-xl md:text-2xl font-bold">FELIPE FLUCK</h2>
               <h3 className="text-sm md:text-lg font-normal">swe - cse - qa - uat</h3>
@@ -254,16 +241,15 @@ export default function ResumePage() {
       <div className="hidden md:block md:w-1/2 relative">
         <Dithering
           style={{ height: "100%", width: "100%" }}
-          colorBack={isDarkMode ? "hsl(0, 0%, 0%)" : "hsl(0, 0%, 95%)"}
-          colorFront={isDarkMode ? "hsl(320, 100%, 70%)" : "hsl(220, 100%, 70%)"}
-          shape="cat"
+          colorBack={isDarkMode ? "#000000" : "#f2f5f6"}
+          colorFront={isDarkMode ? "#991fe0f5" : "#bb7000ff"}
+          shape="warp"
           type="4x4"
-          pxSize={3}
-          offsetX={0}
-          offsetY={0}
-          scale={0.8}
-          rotation={0}
-          speed={0.1}
+          size={2.8}
+          speed={0.28}
+          scale={1.56}
+          rotation={80}
+          offsetX={-0.62}
         />
       </div>
 

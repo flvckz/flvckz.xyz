@@ -89,16 +89,6 @@ export default function ProjectsPage() {
 
       {/* Header with Particle Background */}
       <div className="relative p-4 md:p-8 flex justify-between items-center h-20 md:h-32 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Dithering
-            colorBack="hsl(0, 0%, 0%)"
-            colorFore="hsl(330, 100%, 70%)"
-            pattern="8x8"
-            shape="ripple"
-            offsetX={0}
-            offsetY={0}
-          />
-        </div>
 
         {/* Back Arrow */}
         <Link
