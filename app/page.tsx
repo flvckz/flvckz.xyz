@@ -58,7 +58,7 @@ export default function ResumePage() {
             </div>
             <div className="mb-4 md:mb-8">
               <h2 className="text-xl md:text-2xl font-bold">FELIPE FLUCK</h2>
-              <h3 className="text-sm md:text-lg font-normal">swe - cse - qa - uat</h3>
+              <h3 className="text-sm md:text-lg font-normal">customer and software engineer</h3>
             </div>
           </div>
         </div>
