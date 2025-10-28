@@ -33,7 +33,19 @@ export default function ResumePage() {
           {/* Header content on top of particles */}
           <div className="relative z-10">
             <div className="flex justify-between items-start mb-4 md:mb-8">
-              <h1 className="text-base md:text-lg font-normal">flvckz.xyz</h1>
+              <div className="relative">
+                <a 
+                  href="https://flvckz.xyz" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group text-base md:text-lg font-normal hover:opacity-70 transition-opacity"
+                >
+                  flvckz.xyz
+                  <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 text-xs opacity-0 group-hover:opacity-85 transition-opacity whitespace-nowrap">
+                    (&larr; loop here!)
+                  </span>
+                </a>
+              </div>
               {/* Theme toggle button */}
               <button
                 onClick={toggleTheme}
