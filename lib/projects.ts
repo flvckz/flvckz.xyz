@@ -21,7 +21,7 @@ export const projects: Project[] = [
     client: 'Personal',
     url: 'https://github.com/flvckz/polygram',
     images: [
-      { src: '/polygram-preview.svg', alt: 'Polygram preview' },
+      { src: '/polygram-banner.png', alt: 'Polygram preview' },
       { src: '/placeholder.jpg', alt: 'Polygram screenshot 2' },
       { src: '/placeholder.jpg', alt: 'Polygram screenshot 3' },
     ],

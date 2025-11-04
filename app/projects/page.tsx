@@ -45,7 +45,7 @@ export default function ProjectsPage() {
       name: "Polygram - 2025",
       description: "Polymarket integrated Telegram Bot - WIP",
       url: "https://github.com/flvckz/polygram",
-      embedUrl: "/public/polygram-banner.png",
+      embedUrl: "",
       type: "github",
     },
     {
