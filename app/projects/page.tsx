@@ -3,10 +3,14 @@
 import Link from "next/link"
 import { useState, useEffect } from "react"
 import { Dithering } from "@paper-design/shaders-react"
+import { ReactLenis, useLenis } from "lenis/react"
 
 export default function ProjectsPage() {
   const [isDarkMode, setIsDarkMode] = useState(true)
   const [isLoading, setIsLoading] = useState(true)
+
+  // Initialize Lenis soft scroll
+  useLenis(() => {})
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme")
@@ -97,6 +101,7 @@ export default function ProjectsPage() {
 
   return (
     <div className={`min-h-screen font-mono ${isDarkMode ? "bg-black text-white" : "bg-gray-100 text-black"}`}>
+      <ReactLenis root options={{ lerp: 0.1, smoothWheel: true }} />
       {isLoading && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black">
           <div className="relative">
