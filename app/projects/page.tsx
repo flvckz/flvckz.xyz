@@ -1,6 +1,8 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
+import { getProjectBySlug } from "@/lib/projects"
 import { useState, useEffect } from "react"
 import { Dithering } from "@paper-design/shaders-react"
 import { ReactLenis, useLenis } from "lenis/react"
@@ -43,7 +45,7 @@ export default function ProjectsPage() {
       name: "Polygram - 2025",
       description: "Polymarket integrated Telegram Bot - WIP",
       url: "https://github.com/flvckz/polygram",
-      embedUrl: "",
+      embedUrl: "/public/polygram-banner.png",
       type: "github",
     },
     {
@@ -98,6 +100,10 @@ export default function ProjectsPage() {
     'Nazko Unique Bikes - 2023': 'unique-bikes',
     'Adopt-a-Dog - 2023': 'adopt-a-dog',
   }
+
+  // Preview image for Polygram from lib/projects
+  const polygramPreviewSrc = getProjectBySlug("polygram")?.images?.[0]?.src || "/placeholder.jpg"
+  const [polyPreviewError, setPolyPreviewError] = useState(false)
 
   return (
     <div className={`min-h-screen font-mono ${isDarkMode ? "bg-black text-white" : "bg-gray-100 text-black"}`}>
@@ -171,6 +177,17 @@ export default function ProjectsPage() {
             <div className="aspect-video relative">
               {project.embedUrl ? (
                 <iframe src={project.embedUrl} className="w-full h-full" allowFullScreen title={project.name} />
+              ) : project.name === "Polygram - 2025" && !polyPreviewError ? (
+                <div className="relative w-full h-full">
+                  <Image
+                    src={polygramPreviewSrc}
+                    alt="Polygram preview"
+                    fill
+                    className="object-cover"
+                    onError={() => setPolyPreviewError(true)}
+                    priority
+                  />
+                </div>
               ) : (
                 <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-purple-500/20 to-blue-500/20">
                   <div className="text-center">
