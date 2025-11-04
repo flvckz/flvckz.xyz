@@ -36,6 +36,13 @@ export default function ProjectsPage() {
       type: "gitbook",
     },
     {
+      name: "Polygram - 2025",
+      description: "Polymarket integrated Telegram Bot - WIP",
+      url: "https://github.com/flvckz/polygram",
+      embedUrl: "",
+      type: "github",
+    },
+    {
       name: "Placey - 2022/23",
       description: "Web3 Lands Space backed by Decentraland",
       url: "https://www.figma.com/proto/5mwdl5uOm7aQ02IeK4ZwzD/Placey-Landing-Page?node-id=0-1&p=f&t=G8VvS7LUYFBpoLse-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
@@ -76,6 +83,17 @@ export default function ProjectsPage() {
       type: "figma",
     },
   ]
+
+  // Keep using the original local projects list and external links
+  const slugMap: Record<string, string> = {
+    'AsterStrategy - 2025': 'asterstrategy',
+    'Polygram - 2025': 'polygram',
+    'Placey - 2022/23': 'placey',
+    'Park-It - 2021/22': 'park-it',
+    'RE Landing - 2023': 're-landing',
+    'Nazko Unique Bikes - 2023': 'unique-bikes',
+    'Adopt-a-Dog - 2023': 'adopt-a-dog',
+  }
 
   return (
     <div className={`min-h-screen font-mono ${isDarkMode ? "bg-black text-white" : "bg-gray-100 text-black"}`}>
@@ -127,7 +145,7 @@ export default function ProjectsPage() {
       </div>
 
       {/* Projects Grid */}
-      <div className="p-4 md:p-8 grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8">
+      <div className="mx-auto max-w-5xl px-4 md:px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
         {projects.map((project) => (
           <div
             key={project.name}
@@ -138,14 +156,12 @@ export default function ProjectsPage() {
             <div className="p-3 md:p-4 border-b border-current">
               <h2 className="text-lg md:text-xl font-bold mb-2">{project.name}</h2>
               <p className="text-xs md:text-sm opacity-70 mb-2">{project.description}</p>
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href={`/projects/${slugMap[project.name] ?? ''}`}
                 className="text-xs md:text-sm underline hover:opacity-70 transition-opacity"
               >
                 View Project →
-              </a>
+              </Link>
             </div>
             <div className="aspect-video relative">
               {project.embedUrl ? (

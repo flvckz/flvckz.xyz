@@ -126,21 +126,17 @@ export default function ResumePage() {
           <div className="flex flex-wrap md:flex-nowrap">
             
             <a
-              href="https://github.com/flvckz"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/projects/polygram"
               className="underline hover:opacity-70 transition-opacity"
             >
               Polygram
             </a>
-            <span className="mx-2 md:mx-4">Polymarket integrated Telegram Bot - In progress...</span>
+            <span className="mx-2 md:mx-4">Polymarket integrated Telegram Bot - WIP</span>
           </div>
           <div className="flex flex-wrap md:flex-nowrap">
             
             <a
-              href="https://aster-strategy.gitbook.io/asterstrategy-docs/WJ8wnrTo3CVgyulPgXC6"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/projects/asterstrategy"
               className="underline hover:opacity-70 transition-opacity"
             >
               AsterStrategy
@@ -149,9 +145,7 @@ export default function ResumePage() {
           </div>
           <div className="flex flex-wrap md:flex-nowrap">
             <a
-              href="https://github.com/flvckz/park-it-finalversion"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/projects/park-it"
               className="underline hover:opacity-70 transition-opacity"
             >
               Park-It
