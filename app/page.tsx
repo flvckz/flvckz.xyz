@@ -126,7 +126,7 @@ export default function ResumePage() {
           <div className="flex flex-wrap md:flex-nowrap">
             
             <a
-              href="https://github.com/flvckz"
+              href="https://github.com/flvckz/polygram"
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:opacity-70 transition-opacity"
